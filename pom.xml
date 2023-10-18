@@ -15,7 +15,7 @@
     <name>tasteassured</name>
     <description>tasteassured</description>
     <modules>
-        <module>user_management</module>
+        <module>services/user_management</module>
     </modules>
     <properties>
         <java.version>17</java.version>
