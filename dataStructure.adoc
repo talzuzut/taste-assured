@@ -1,0 +1,49 @@
+= Database Structure
+
+== Users Table
+
+|===
+| Column Name | Type
+| id | Primary Key
+| username | String
+| password | String
+| firstname | String
+| lastname | String
+| email | String
+| createdAt | Timestamp
+|===
+
+== UserConnections Table
+
+|===
+| Column Name | Type
+| id | Primary Key
+| userA | Foreign Key to Users
+| userB | Foreign Key to Users
+| connectionType | Enum (friend, follower, mutualFriend)
+| status | Enum (pending, approved, blocked)
+| createdAt | Timestamp
+|===
+
+== Restaurants Table
+
+|===
+| Column Name | Type
+| id | Primary Key
+| name | String
+| cuisineType | Enum (italian, chinese, mexican, etc.)
+| createdAt | Timestamp
+|===
+
+== Recommendation Table
+
+|===
+| Column Name | Type
+| recommendationId | Primary Key
+| createdAt | Timestamp
+| creator | Foreign Key to Users
+| restaurantId | Foreign Key to Restaurants
+| description | String
+| rating | Integer
+|===
+

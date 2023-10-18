@@ -1,0 +1,98 @@
+= TasteAssured
+
+== Project Description
+
+TasteAssured is a social network and recommendation platform with a singular focus: trustworthy culinary recommendations from your friends and the people you follow.
+In a world overflowing with dining options, we recognize the value of genuine, personalized recommendations from those you trust.
+
+=== Main Features
+
+* *Connect with Friends*: Customize your profile and connect with friends who share your culinary preferences.
+By following their dining experiences, you gain access to their trusted restaurant recommendations.
+
+* *Discover and Recommend*: Explore a curated selection of restaurants, cafes, and eateries.
+What sets TasteAssured apart is its unique feature – the ability to recommend specific dishes.
+When you encounter an extraordinary dish, you can include it in your review, enabling your friends and followers to directly savor your recommendations.
+
+In a world where restaurant reviews can often lack authenticity, TasteAssured is your culinary confidant.
+It's where every dining experience becomes an adventure guided by the tastes of those you know and trust.
+Join us on this gastronomic journey, where personal connections and recommended dishes transform your dining experiences into memorable culinary discoveries.
+TasteAssured is where every meal tells a story, and every recommendation is a flavorful assurance of great taste.
+
+== Project Goals
+
+. *Culinary Trustworthiness and Authenticity*: Establish TasteAssured as a trusted platform where users can rely on authentic recommendations from friends and connections for their dining choices.
+
+. *Personalized Dining Experiences*: Provide users with a highly personalized culinary journey by connecting them with friends who share similar tastes and enabling them to recommend specific dishes in their reviews.
+
+. *User Engagement and Culinary Discovery*: Foster user engagement by creating a vibrant community of food enthusiasts who actively share, discover, and review dining experiences, thereby encouraging culinary discovery.
+
+. *Seamless User Experience*: Deliver a seamless and intuitive user experience, ensuring that users can easily navigate, connect, and explore recommendations.
+
+. *User Privacy and Security*: Prioritize user data privacy and security to provide users with confidence in sharing their dining experiences.
+
+== Target Audience
+
+TasteAssured is designed for a diverse range of culinary enthusiasts who value personalized, trustworthy dining recommendations.
+
+Our target audience includes:
+
+* Food Enthusiasts: Individuals passionate about exploring new culinary experiences.
+* Social Diners: People who enjoy dining out with friends and sharing their dining experiences.
+* Tech-Savvy Users: Those comfortable with digital platforms for discovering and sharing dining recommendations.
+
+Factors such as age, location, and dining preferences may vary among our audience, but the common thread is an appreciation for credible culinary suggestions from trusted connections.
+
+== Key Features
+
+TasteAssured offers a range of essential features to enhance the dining discovery experience:
+
+. *User Profiles*: Users can create and customize profiles, including details about their dining preferences and experiences.
+
+. *Friend Connections*: The platform allows users to connect with friends and trusted acquaintances, enabling them to access dining recommendations from their network.
+
+. *Discover Restaurants*: Users can explore a curated selection of restaurants, cafes, and eateries that align with their tastes.
+
+. *Dish Recommendations*: A unique feature lets users recommend specific dishes in their reviews, making it easier for friends and followers to explore and enjoy their culinary finds.
+
+. *Privacy Settings*: Users have control over their data privacy and sharing settings, ensuring a comfortable and secure experience.
+
+Each of these features contributes to our project's primary goals, promoting trustworthiness, personalization, and an engaging culinary discovery experience.
+
+== Technology Stack
+
+*Frontend*: React
+
+*Backend*: Java, Spring Boot
+
+*Containerization*: Docker
+
+*Queue Management*: Kafka
+
+*Caching*: Redis
+
+*Logging &amp; Monitoring*: ELK Stack (Elasticsearch, Logstash, Kibana)
+
+*API Documentation*: Swagger
+
+*Testing*: JUnit, Mockito
+
+== Data Sources
+
+* TODO
+
+== User Authentication
+
+* Oauth2
+
+== Database Design
+
+* Explain how you plan to structure the database, including tables and relationships.
+
+== Security Measures
+
+* TODO
+
+== User Experience (UX) Design
+
+* TODO
