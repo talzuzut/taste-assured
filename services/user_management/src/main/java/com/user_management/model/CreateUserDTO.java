@@ -2,6 +2,7 @@ package com.user_management.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Builder;
 import lombok.Getter;
 import org.hibernate.validator.constraints.Length;
 
@@ -11,6 +12,7 @@ import org.hibernate.validator.constraints.Length;
 
 
 @Getter
+@Builder
 public class CreateUserDTO {
 	@Length(message = "username length between 4 and 13", min = 4, max = 13)
 	private String username;

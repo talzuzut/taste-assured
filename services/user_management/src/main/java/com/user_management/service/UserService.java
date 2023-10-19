@@ -23,8 +23,13 @@ private final UserRepository userRepository;
 				.build();
 	}
 
-	public void addUser(User user) {
-		userRepository.save(user);
+	public boolean addUser(User user) {
+		try {
+			userRepository.save(user);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 
