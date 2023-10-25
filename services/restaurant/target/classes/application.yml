@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: restaurant
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/restaurant
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+        order_inserts: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+phone:
+  default-region: IL
