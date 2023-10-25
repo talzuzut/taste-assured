@@ -1,6 +1,7 @@
 = Database Structure
 
 == Users Table
+[options="header"]
 
 |===
 | Column Name | Type
@@ -14,7 +15,7 @@
 |===
 
 == UserConnections Table
-
+[options="header"]
 |===
 | Column Name | Type
 | id | Primary Key
@@ -27,16 +28,25 @@
 
 == Restaurants Table
 
+[options="header"]
 |===
 | Column Name | Type
 | id | Primary Key
 | name | String
-| cuisineType | Enum (italian, chinese, mexican, etc.)
+| address | String
+| phone | String
+| longitude | BigDecimal
+| latitude | BigDecimal
+| googleMapsUrl | URL
+| websiteUrl | URL
+| openingHours | OpeningHours
+| priceLevel | PriceLevel
+| wheelchairAccessibleEntrance | Boolean
 | createdAt | Timestamp
 |===
 
 == Recommendation Table
-
+[options="header"]
 |===
 | Column Name | Type
 | recommendationId | Primary Key
