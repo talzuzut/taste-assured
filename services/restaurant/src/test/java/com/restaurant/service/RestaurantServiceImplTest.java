@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.geo.Point;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -29,8 +30,7 @@ public class RestaurantServiceImplTest {
 	private final String validRestaurantName = "Valid Restaurant Name";
 	private final String validRestaurantAddress = "Valid Restaurant Address";
 	private final String validPhoneNumber = "+972 52 123 4567";
-	private final double validLongitude = 1.0;
-	private final double validLatitude = 1.0;
+	private final Point validLocation = new Point(32.123456, 34.123456);
 	private final URL validGoogleMapsUrl = new URL("https://maps.google.com/?cid=123456789");
 	private final URL validWebsiteUrl = new URL("https://google.com");
 	private final PriceLevel priceLevel = PriceLevel.MODERATE;
@@ -192,8 +192,7 @@ public class RestaurantServiceImplTest {
 				.name(validRestaurantName)
 				.address(validRestaurantAddress)
 				.phone(validPhoneNumber)
-				.longitude(BigDecimal.valueOf(validLongitude))
-				.latitude(BigDecimal.valueOf(validLatitude))
+				.location(validLocation)
 				.googleMapsUrl(validGoogleMapsUrl)
 				.websiteUrl(validWebsiteUrl)
 				.openingHours(openingHours)
@@ -209,8 +208,8 @@ public class RestaurantServiceImplTest {
 		placeDetails.formattedPhoneNumber = validPhoneNumber;
 		placeDetails.geometry = new Geometry();
 		placeDetails.geometry.location = new LatLng();
-		placeDetails.geometry.location.lng = validLongitude;
-		placeDetails.geometry.location.lat = validLatitude;
+		placeDetails.geometry.location.lat = validLocation.getX();
+		placeDetails.geometry.location.lng = validLocation.getY();
 		placeDetails.url = validGoogleMapsUrl;
 		placeDetails.website = validWebsiteUrl;
 		placeDetails.openingHours = openingHours;

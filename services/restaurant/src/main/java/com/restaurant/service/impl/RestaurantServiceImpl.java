@@ -11,6 +11,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.geo.Point;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -42,6 +43,11 @@ public class RestaurantServiceImpl implements RestaurantService {
 		return restaurantRepository.findById(id).orElse(null);
 	}
 
+	@Override
+	public Restaurant getRestaurantByName(String name) {
+		return restaurantRepository.getByName(name);
+	}
+
 	public void deleteRestaurantById(Long id) {
 		log.info("Deleting Restaurant: {}", id);
 		if (!restaurantExistsById(id)) {
@@ -70,8 +76,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 				.name(placeDetails.name)
 				.address(placeDetails.formattedAddress)
 				.phone(placeDetails.formattedPhoneNumber)
-				.longitude(BigDecimal.valueOf(placeDetails.geometry.location.lng))
-				.latitude(BigDecimal.valueOf(placeDetails.geometry.location.lat))
+				.location(new Point(placeDetails.geometry.location.lat, placeDetails.geometry.location.lng))
 				.googleMapsUrl(placeDetails.url)
 				.websiteUrl(placeDetails.website)
 				.openingHours(placeDetails.openingHours)
