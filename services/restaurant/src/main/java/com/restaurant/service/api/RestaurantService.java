@@ -35,6 +35,14 @@ public interface RestaurantService {
 	Restaurant getRestaurantById(Long id);
 
 	/**
+	 * Retrieves a restaurant by its name.
+	 *
+	 * @param name The name of the restaurant..
+	 * @return The restaurant if found, or null if not found.
+	 */
+	Restaurant getRestaurantByName(String name);
+
+	/**
 	 * Deletes a restaurant by its unique identifier.
 	 *
 	 * @param id The unique identifier of the restaurant to delete.

@@ -1,5 +1,6 @@
 package com.restaurant.controller;
 
+import com.restaurant.exception.RestaurantNotFoundException;
 import com.restaurant.model.Restaurant;
 import com.restaurant.service.impl.RestaurantServiceImpl;
 import lombok.AllArgsConstructor;
@@ -20,7 +21,22 @@ public class RestaurantController {
 
 		log.info("Restaurant requested: {}", id);
 		Restaurant restaurantById = restaurantServiceImpl.getRestaurantById(id);
+		if (restaurantById == null) {
+			throw new RestaurantNotFoundException();
+		}
 		return ResponseEntity.ok(restaurantById);
+
+	}
+
+	@GetMapping("/name/{name}")
+	public ResponseEntity<Restaurant> getRestaurantByName(@PathVariable String name) {
+
+		log.info("Restaurant requested: {}", name);
+		Restaurant restaurantByName = restaurantServiceImpl.getRestaurantByName(name);
+		if (restaurantByName == null) {
+			throw new RestaurantNotFoundException();
+		}
+		return ResponseEntity.ok(restaurantByName);
 
 	}
 

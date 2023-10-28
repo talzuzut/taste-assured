@@ -4,8 +4,8 @@ import com.google.maps.model.OpeningHours;
 import com.google.maps.model.PriceLevel;
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.data.geo.Point;
 
-import java.math.BigDecimal;
 import java.net.URL;
 import java.time.LocalDateTime;
 
@@ -25,8 +25,7 @@ public class Restaurant {
 	private String name;
 	private String address;
 	private String phone;
-	private BigDecimal longitude;
-	private BigDecimal latitude;
+	private Point location;
 	private URL googleMapsUrl;
 	private URL websiteUrl;
 	private OpeningHours openingHours;
