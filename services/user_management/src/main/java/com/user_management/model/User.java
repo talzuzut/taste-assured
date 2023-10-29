@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user_account")
+@Table(name = "users")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqGen")
-	@SequenceGenerator(name = "seqGen", sequenceName = "user_account_id_seq", allocationSize = 1)
+	@SequenceGenerator(name = "seqGen", sequenceName = "user_id_seq", allocationSize = 1)
 	private Long id;
 	private String username;
 	private String password;
