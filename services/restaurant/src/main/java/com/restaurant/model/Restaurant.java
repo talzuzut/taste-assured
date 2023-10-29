@@ -16,11 +16,11 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "restaurant_account")
+@Table(name = "restaurants")
 public class Restaurant {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqGen")
-	@SequenceGenerator(name = "seqGen", sequenceName = "restaurant_account_id_seq", allocationSize = 1)
+	@SequenceGenerator(name = "seqGen", sequenceName = "restaurant_id_seq", allocationSize = 1)
 	private Long id;
 	private String name;
 	private String address;
