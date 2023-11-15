@@ -45,11 +45,11 @@
 | createdAt | Timestamp
 |===
 
-== Recommendation Table
+== Rating Table
 [options="header"]
 |===
 | Column Name | Type
-| recommendationId | Primary Key
+| ratingId | Primary Key
 | createdAt | Timestamp
 | creator | Foreign Key to Users
 | restaurantId | Foreign Key to Restaurants
