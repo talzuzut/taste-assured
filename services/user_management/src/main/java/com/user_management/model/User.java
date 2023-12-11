@@ -1,4 +1,5 @@
 package com.user_management.model;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,8 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users")
+@Table(name = "users",
+		uniqueConstraints = @UniqueConstraint(columnNames = {"username", "email"}))
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqGen")

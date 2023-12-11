@@ -1,19 +1,17 @@
 package com.user_management.exception;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -45,9 +43,14 @@ public class GlobalExceptionHandler {
 		else return ResponseEntity.badRequest().body("Please provide a valid input");
 	}
 
-	@ExceptionHandler(IllegalArgumentException.class)
+	@ExceptionHandler({IllegalArgumentException.class, InvalidFollowRelationshipArgument.class})
 	public ResponseEntity<Object> handleIllegalArgumentException(IllegalArgumentException ex) {
 		return ResponseEntity.badRequest().body(ex.getMessage());
+	}
+
+	@ExceptionHandler(DataIntegrityViolationException.class)
+	public ResponseEntity<Object> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
+		return ResponseEntity.badRequest().body("Invalid input- \n" + "such a record already exists");
 	}
 
 }
