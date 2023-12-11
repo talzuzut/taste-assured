@@ -32,3 +32,5 @@ build/
 .vscode/
 /.env
 /run/
+/services/rating/.env
+/services/restaurant/.env
