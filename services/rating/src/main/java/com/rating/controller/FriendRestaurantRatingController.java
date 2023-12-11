@@ -10,8 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-//TODO - DELETE THIS FILE, data should be injected from kafka stream
-//
+
 @RestController
 @RequestMapping("/api/v1/friend_rating/restaurant")
 @RequiredArgsConstructor
