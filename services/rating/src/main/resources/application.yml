@@ -1,0 +1,36 @@
+server:
+  port: 8092
+spring:
+  application:
+    name: rating
+  data:
+    mongodb:
+      authentication-database: admin
+      username: ${RATING_MONGODB_USERNAME}
+      password: ${RATING_MONGODB_PASSWORD}
+      database: ${RATING_MONGODB_DATABASE}
+      port: ${RATING_MONGODB_PORT}
+      host: ${RATING_MONGODB_HOST}
+      auto-index-creation: true
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: restaurant-rating-consumer-group
+      auto-offset-reset: earliest
+      topic:
+        ratings-with-followers-data: ${KAFKA_TOPIC_RATINGS_WITH_FOLLOWERS_DATA}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      topic:
+        ratings-requiring-followers-data: ${KAFKA_TOPIC_RATINGS_REQUIRING_FOLLOWERS_DATA}
+
+
+
+
+
+  #      username: ${MONGODB_USERNAME}
+#      password: ${MONGODB_PASSWORD}
+#      database: ${MONGODB_DATABASE}
+#      port: ${MONGODB_PORT}
+#      host: ${MONGODB_HOST}
