@@ -1,0 +1,27 @@
+server:
+  port: ${API_GATEWAY_PORT:9000}
+
+spring:
+  application:
+    name: apigw
+  cloud:
+    gateway:
+      routes:
+        - id: restaurant-route
+          uri: http://${HOST:localhost}:${RESTAURANT_SERVICE_PORT:8091}
+          predicates:
+            - Path=/restaurant/**
+          filters:
+            - PrefixPath=/api/v1
+        - id: user-management-route
+          uri: http://${HOST:localhost}:${USER_MANAGEMENT_SERVICE_PORT:8090}
+          predicates:
+            - Path=/user/**, /follow/**
+          filters:
+            - PrefixPath=/api/v1
+        - id: rating-route
+          uri: http://${HOST:localhost}:${RATING_SERVICE_PORT:8092}
+          predicates:
+            - Path=/friend_rating/**, /rating/restaurant/**
+          filters:
+            - PrefixPath=/api/v1

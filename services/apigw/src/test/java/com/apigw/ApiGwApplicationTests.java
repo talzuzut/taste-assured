@@ -1,10 +1,10 @@
-package com.authentication;
+package com.apigw;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AuthenticationApplicationTests {
+class ApiGwApplicationTests {
 
 	@Test
 	void contextLoads() {

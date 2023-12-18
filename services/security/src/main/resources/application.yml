@@ -1,0 +1,22 @@
+server:
+  port: ${SECURITY_SERVICE_PORT:8093}
+spring:
+  application:
+    name: security
+  datasource:
+    username: ${SECURITY_POSTGRES_USERNAME}
+    password: ${SECURITY_POSTGRES_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/security
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+        order_inserts: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
